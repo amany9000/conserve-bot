@@ -10,7 +10,6 @@ import {
   UserMessagePart,
   AssistMessagePart,
   ToolMessagePart,
-  ReasoningPart,
 } from "./message-parts";
 import { ChevronDown, ChevronUp, TriangleAlertIcon } from "lucide-react";
 import { Button } from "ui/button";
@@ -61,16 +60,6 @@ const PurePreviewMessage = ({
           {message.parts?.map((part, index) => {
             const key = `message-${messageIndex}-part-${part.type}-${index}`;
             const isLastPart = index === message.parts.length - 1;
-
-            if (part.type === "reasoning") {
-              return (
-                <ReasoningPart
-                  key={key}
-                  reasoningText={part.text}
-                  isThinking={isLastPart && isLastMessage && isLoading}
-                />
-              );
-            }
 
             if (isUserMessage && part.type === "text" && part.text) {
               return (

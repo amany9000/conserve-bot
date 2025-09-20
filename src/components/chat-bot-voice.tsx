@@ -52,7 +52,6 @@ import { useShallow } from "zustand/shallow";
 import { useTranslations } from "next-intl";
 import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "ui/dialog";
 import JsonView from "ui/json-view";
-import { isShortcutEvent, Shortcuts } from "lib/keyboard-shortcuts";
 
 const prependTools = [
   {
@@ -179,26 +178,6 @@ export function ChatBotVoice() {
       stop();
     }
   }, [error]);
-
-  useEffect(() => {
-    if (voiceChat.isOpen) return;
-    const handleKeyDown = (e: KeyboardEvent) => {
-      const isVoiceChatEvent = isShortcutEvent(e, Shortcuts.toggleVoiceChat);
-      if (isVoiceChatEvent) {
-        e.preventDefault();
-        e.stopPropagation();
-        appStoreMutate((prev) => ({
-          voiceChat: {
-            ...prev.voiceChat,
-            isOpen: true,
-            agentId: undefined,
-          },
-        }));
-      }
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [voiceChat.isOpen]);
 
   return (
     <Drawer dismissible={false} open={voiceChat.isOpen} direction="top">

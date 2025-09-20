@@ -27,15 +27,6 @@ const toggleTemporaryChatShortcut: Shortcut = {
   },
 };
 
-const toggleVoiceChatShortcut: Shortcut = {
-  description: "toggleVoiceChat",
-  shortcut: {
-    key: "I",
-    command: true,
-    shift: true,
-  },
-};
-
 const toggleSidebarShortcut: Shortcut = {
   description: "toggleSidebar",
   shortcut: {
@@ -91,7 +82,6 @@ export const Shortcuts = {
   openNewChat: openNewChatShortcut,
   openChatPreferences: openChatPreferencesShortcut,
   toggleTemporaryChat: toggleTemporaryChatShortcut,
-  toggleVoiceChat: toggleVoiceChatShortcut,
   toggleSidebar: toggleSidebarShortcut,
   lastMessageCopy: lastMessageCopyShortcut,
   deleteThread: deleteThreadShortcut,

@@ -178,7 +178,7 @@
       "createAccount": "Create account"
     },
     "Intro": {
-      "description": "Welcome to better-chatbot. Sign in to experience our AI-powered conversational tools."
+      "description": "Welcome to Conserve.ai. Sign in to experience our AI-powered conversational tools."
     }
   },
   "Chat": {
@@ -188,12 +188,9 @@
       "goodMorning": "Good morning, {name}",
       "goodAfternoon": "Good afternoon, {name}",
       "goodEvening": "Good evening, {name}",
-      "niceToSeeYouAgain": "Nice to see you again, {name}",
-      "whatAreYouWorkingOnToday": "What are you working on today? {name}",
-      "letMeKnowWhenYoureReadyToBegin": "Let me know when you're ready to begin.",
-      "whatAreYourThoughtsToday": "What are your thoughts today?",
-      "whereWouldYouLikeToStart": "Where would you like to start?",
-      "whatAreYouThinking": "What are you thinking? {name}"
+      "conservation": "What about Conservation interests you, {name}?",
+      "climateChange": "What about Climate Change interests you, {name}?",
+      "environment": "What about Environmental Protection interests you?"
     },
     "TemporaryChat": {
       "toggleTemporaryChat": "Toggle Temporary Chat",
@@ -205,7 +202,7 @@
       "temporaryChatInstructionsPlaceholder": "Enter your instructions here",
       "temporaryChatInstructionsDescription": "You can set instructions for the temporary chat. This will be used as a system prompt for the temporary chat."
     },
-    "placeholder": "Ask anything or @mention",
+    "placeholder": "Dive deep into our conservation info-hub",
     "Tool": {
       "webSearching": "Searching the Web...",
       "searchedTheWeb": "Searched the Web",
@@ -292,7 +289,7 @@
     "workflow": "Workflow",
     "toggleSidebar": "Toggle Sidebar",
     "newChat": "New Chat",
-    "mcpConfiguration": "MCP Configuration",
+    "mcpConfiguration": "Climate KnowledgeBases",
     "agents": "Agents",
     "newAgent": "Create Agent",
     "createAgent": "Create an agent",
@@ -426,12 +423,12 @@
   "MCP": {
     "marketplace": "Marketplace",
     "addMcpServer": "Add Server",
-    "configureYourMcpServerConnectionSettings": "Configure your MCP server connection settings",
-    "mcpConfiguration": "MCP Configuration",
+    "configureYourMcpServerConnectionSettings": "Configure your Climate KnowledgeBase server connection settings",
+    "mcpConfiguration": "Climate KnowledgeBase Configuration",
     "nameMustContainOnlyAlphanumericCharactersAndHyphens": "Name must contain only alphanumeric characters (A-Z, a-z, 0-9) and hyphens (-)",
     "nameIsRequired": "Name is required",
     "configurationSavedSuccessfully": "Configuration saved successfully",
-    "enterMcpServerName": "Enter MCP server name",
+    "enterMcpServerName": "Enter KnowledgeBase server name",
     "saveConfiguration": "Save Configuration",
     "toolsTest": "Tools Test",
     "refresh": "Refresh",
@@ -440,8 +437,8 @@
     "configuration": "Configuration",
     "availableTools": "Available Tools",
     "noToolsAvailable": "No tools available",
-    "overviewTitle": "Connect Your First Server",
-    "overviewDescription": "Add MCP servers to unlock powerful AI integrations",
+    "overviewTitle": "Connect Your First Climate Server",
+    "overviewDescription": "Add Climate MCP servers to unlock powerful AI integrations",
     "searchTools": "Search tools",
     "detail": "Detail",
     "noSchemaPropertiesAvailable": "No schema properties available",

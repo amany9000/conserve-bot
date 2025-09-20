@@ -14,8 +14,6 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect } from "react";
 
 import { AppSidebarMenus } from "./app-sidebar-menus";
-import { AppSidebarAgents } from "./app-sidebar-agents";
-import { AppSidebarThreads } from "./app-sidebar-threads";
 
 import { isShortcutEvent, Shortcuts } from "lib/keyboard-shortcuts";
 import { AppSidebarUser } from "./app-sidebar-user";
@@ -72,7 +70,7 @@ export function AppSidebar({
                   router.refresh();
                 }}
               >
-                <h4 className="font-bold">better-chatbot</h4>
+                <h1 className="text-xl md:text-2xl font-bold">conserve-ai</h1>
                 <div
                   className="ml-auto block sm:hidden"
                   onClick={(e) => {
@@ -92,8 +90,6 @@ export function AppSidebar({
       <SidebarContent className="mt-2 overflow-hidden relative">
         <div className="flex flex-col overflow-y-auto">
           <AppSidebarMenus />
-          <AppSidebarAgents />
-          <AppSidebarThreads />
         </div>
       </SidebarContent>
       <SidebarFooter className="flex flex-col items-stretch space-y-2">

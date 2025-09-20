@@ -3,12 +3,7 @@
 import { useSidebar } from "ui/sidebar";
 import { Tooltip, TooltipContent, TooltipTrigger } from "ui/tooltip";
 import { Toggle } from "ui/toggle";
-import {
-  AudioWaveformIcon,
-  ChevronDown,
-  MessageCircleDashed,
-  PanelLeft,
-} from "lucide-react";
+import { ChevronDown, PanelLeft } from "lucide-react";
 import { Button } from "ui/button";
 import { Separator } from "ui/separator";
 
@@ -23,7 +18,6 @@ import { TextShimmer } from "ui/text-shimmer";
 
 export function AppHeader() {
   const t = useTranslations();
-  const [appStoreMutate] = appStore(useShallow((state) => [state.mutate]));
   const { toggleSidebar } = useSidebar();
   const currentPaths = usePathname();
 
@@ -64,81 +58,6 @@ export function AppHeader() {
 
       {componentByPage}
       <div className="flex-1" />
-
-      <div className="flex items-center gap-2">
-        <Tooltip>
-          <TooltipTrigger asChild>
-            <Button
-              size={"icon"}
-              variant={"ghost"}
-              className="bg-secondary/40"
-              onClick={() => {
-                appStoreMutate((state) => ({
-                  voiceChat: {
-                    ...state.voiceChat,
-                    isOpen: true,
-                    agentId: undefined,
-                  },
-                }));
-              }}
-            >
-              <AudioWaveformIcon className="size-4" />
-            </Button>
-          </TooltipTrigger>
-          <TooltipContent align="end" side="bottom">
-            <div className="text-xs flex items-center gap-2">
-              {t("KeyboardShortcuts.toggleVoiceChat")}
-              <div className="text-xs text-muted-foreground flex items-center gap-1">
-                {getShortcutKeyList(Shortcuts.toggleVoiceChat).map((key) => (
-                  <span
-                    className="w-5 h-5 flex items-center justify-center bg-muted rounded "
-                    key={key}
-                  >
-                    {key}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </TooltipContent>
-        </Tooltip>
-
-        <Tooltip>
-          <TooltipTrigger asChild>
-            <Button
-              size={"icon"}
-              variant={"secondary"}
-              className="bg-secondary/40"
-              onClick={() => {
-                appStoreMutate((state) => ({
-                  temporaryChat: {
-                    ...state.temporaryChat,
-                    isOpen: !state.temporaryChat.isOpen,
-                  },
-                }));
-              }}
-            >
-              <MessageCircleDashed className="size-4" />
-            </Button>
-          </TooltipTrigger>
-          <TooltipContent align="end" side="bottom">
-            <div className="text-xs flex items-center gap-2">
-              {t("KeyboardShortcuts.toggleTemporaryChat")}
-              <div className="text-xs text-muted-foreground flex items-center gap-1">
-                {getShortcutKeyList(Shortcuts.toggleTemporaryChat).map(
-                  (key) => (
-                    <span
-                      className="w-5 h-5 flex items-center justify-center bg-muted rounded "
-                      key={key}
-                    >
-                      {key}
-                    </span>
-                  ),
-                )}
-              </div>
-            </div>
-          </TooltipContent>
-        </Tooltip>
-      </div>
     </header>
   );
 }

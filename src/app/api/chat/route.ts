@@ -242,6 +242,7 @@ export async function POST(request: Request) {
                 return metadata;
               }
             },
+            sendReasoning: false,
           }),
         );
       },

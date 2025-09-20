@@ -24,12 +24,9 @@ export const ChatGreeting = () => {
     if (!user?.name) return "";
     const words = [
       t(getGreetingByTime(), { name: user.name }),
-      t("niceToSeeYouAgain", { name: user.name }),
-      t("whatAreYouWorkingOnToday", { name: user.name }),
-      t("letMeKnowWhenYoureReadyToBegin"),
-      t("whatAreYourThoughtsToday"),
-      t("whereWouldYouLikeToStart"),
-      t("whatAreYouThinking", { name: user.name }),
+      t("conservation", { name: user.name }),
+      t("climateChange", { name: user.name }),
+      t("environment", { name: user.name }),
     ];
     return words[Math.floor(Math.random() * words.length)];
   }, [user?.name]);
@@ -44,8 +41,14 @@ export const ChatGreeting = () => {
       transition={{ delay: 0.3 }}
     >
       <div className="rounded-xl p-6 flex flex-col gap-2 leading-relaxed text-center">
-        <h1 className="text-2xl md:text-3xl">
-          {word ? <FlipWords words={[word]} className="text-primary" /> : ""}
+        <h1 className="text-2xl md:text-3xl w-full border-current pb-2 text-center">
+          <span className="block w-full text-center whitespace-nowrap overflow-visible print:whitespace-nowrap">
+            {word ? (
+              <FlipWords words={[word]} className="inline-block text-primary" />
+            ) : (
+              ""
+            )}
+          </span>
         </h1>
       </div>
     </motion.div>

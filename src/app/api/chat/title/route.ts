@@ -53,7 +53,7 @@ export async function POST(request: Request) {
       },
     });
 
-    return result.toUIMessageStreamResponse();
+    return result.toUIMessageStreamResponse({ sendReasoning: false });
   } catch (err) {
     return new Response(handleError(err), { status: 500 });
   }
